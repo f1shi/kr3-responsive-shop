@@ -13,6 +13,7 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
     <header class="site-header">
       <div class="site-header__inner">
         <a class="site-header__logo" href="index.html">ShopProject</a>
@@ -29,6 +30,7 @@
             </li>
             <li class="site-nav__item">
               <a href="order.html" class="site-nav__link site-nav__link--active"
+                aria-current="page"
                 >Заявка</a
               >
             </li>
@@ -40,17 +42,21 @@
       </div>
     </header>
 
-    <main>
+    <main id="main" class="main" tabindex="-1">
       <section class="section">
         <!-- Хлебные крошки -->
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
           <a class="breadcrumbs__link" href="index.html">Главная</a>
-          <span class="breadcrumbs__current">Заявка</span>
+          <span class="breadcrumbs__current" aria-current="page">Заявка</span>
         </nav>
 
         <h1>Оформление заявки</h1>
         <p>
           Заполните форму, и наш менеджер свяжется с вами в течение 15 минут.
+        </p>
+
+        <p class="form-note">
+          Поля, отмеченные звёздочкой, обязательны для заполнения.
         </p>
 
         <form
@@ -65,12 +71,16 @@
             <input
               class="order-form__input"
               id="page-name"
+              aria-describedby="page-name-error"
               name="name"
               type="text"
               placeholder="Иван Иванов"
               minlength="2"
               required
             />
+            <p class="order-form__error" id="page-name-error" hidden>
+              Введите имя (минимум 2 символа).
+            </p>
           </div>
 
           <div class="order-form__field">
@@ -78,11 +88,15 @@
             <input
               class="order-form__input"
               id="page-email"
+              aria-describedby="page-email-error"
               name="email"
               type="email"
               placeholder="ivan@example.com"
               required
             />
+            <p class="order-form__error" id="page-email-error" hidden>
+              Введите корректный e-mail.
+            </p>
           </div>
 
           <div class="order-form__field">
@@ -90,6 +104,7 @@
             <input
               class="order-form__input"
               id="page-phone"
+              aria-describedby="page-phone-hint page-phone-error"
               name="phone"
               type="tel"
               inputmode="tel"
@@ -97,7 +112,10 @@
               pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
               required
             />
-            <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+            <small class="order-form__hint" id="page-phone-hint">Формат: +7 (900) 000-00-00</small>
+            <p class="order-form__error" id="page-phone-error" hidden>
+              Введите телефон в формате +7 (900) 000-00-00.
+            </p>
           </div>
 
           <div class="order-form__field">
@@ -107,6 +125,7 @@
             <select
               class="order-form__select"
               id="page-topic"
+              aria-describedby="page-topic-error"
               name="topic"
               required
             >
@@ -115,6 +134,9 @@
               <option value="consultation">Консультация</option>
               <option value="delivery">Доставка</option>
             </select>
+            <p class="order-form__error" id="page-topic-error" hidden>
+              Выберите тему заявки.
+            </p>
           </div>
 
           <div class="order-form__field order-form__field--wide">
@@ -135,12 +157,16 @@
               <input
                 class="order-form__checkbox"
                 id="page-agreement"
+                aria-describedby="page-agreement-error"
                 name="agreement"
                 type="checkbox"
                 required
               />
               Я согласен на обработку персональных данных *
             </label>
+            <p class="order-form__error" id="page-agreement-error" hidden>
+              Необходимо согласие на обработку данных.
+            </p>
           </div>
 
           <div class="order-form__actions">
@@ -153,7 +179,7 @@
           </div>
         </form>
 
-        <p class="success-message" id="success-message-page" hidden>
+        <p class="success-message" role="status" id="success-message-page" hidden>
           Форма успешно отправлена!
         </p>
       </section>
@@ -165,7 +191,7 @@
         <p class="site-footer__copy">
           Дисциплина: фронтенд и бэкенд разработка
         </p>
-        <nav class="site-footer__nav">
+        <nav class="site-footer__nav" aria-label="Навигация в подвале">
           <a href="index.html">Главная</a>
           <a href="catalog.html">Каталог</a>
           <a href="order.html">Заявка</a>

@@ -13,6 +13,7 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
     <header class="site-header">
       <div class="site-header__inner">
         <a class="site-header__logo" href="index.html">ShopProject</a>
@@ -28,6 +29,7 @@
               <a
                 href="product.html"
                 class="site-nav__link site-nav__link--active"
+                aria-current="page"
                 >Товар</a
               >
             </li>
@@ -42,13 +44,13 @@
       </div>
     </header>
 
-    <main>
+    <main id="main" class="main" tabindex="-1">
       <section class="section">
         <!-- Хлебные крошки -->
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
           <a class="breadcrumbs__link" href="index.html">Главная</a>
-          <span class="breadcrumbs__current">Каталог</span>
-          <span class="breadcrumbs__current">Смартфон Galaxy X</span>
+          <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+          <span class="breadcrumbs__current" aria-current="page">Смартфон Galaxy X</span>
         </nav>
 
         <div class="product-detail">
@@ -95,31 +97,31 @@
             </thead>
             <tbody>
               <tr>
-                <td>Дисплей</td>
+                <th scope="row">Дисплей</th>
                 <td>6.5" AMOLED, 2400×1080</td>
               </tr>
               <tr>
-                <td>Процессор</td>
+                <th scope="row">Процессор</th>
                 <td>Octa-core 2.8 ГГц</td>
               </tr>
               <tr>
-                <td>Оперативная память</td>
+                <th scope="row">Оперативная память</th>
                 <td>8 ГБ</td>
               </tr>
               <tr>
-                <td>Встроенная память</td>
+                <th scope="row">Встроенная память</th>
                 <td>128 ГБ</td>
               </tr>
               <tr>
-                <td>Камера</td>
+                <th scope="row">Камера</th>
                 <td>50 МП + 12 МП + 8 МП</td>
               </tr>
               <tr>
-                <td>Аккумулятор</td>
+                <th scope="row">Аккумулятор</th>
                 <td>5000 мА·ч</td>
               </tr>
               <tr>
-                <td>ОС</td>
+                <th scope="row">ОС</th>
                 <td>Android 14</td>
               </tr>
             </tbody>
@@ -149,7 +151,7 @@
         <p class="site-footer__copy">
           Дисциплина: фронтенд и бэкенд разработка
         </p>
-        <nav class="site-footer__nav">
+        <nav class="site-footer__nav" aria-label="Навигация в подвале">
           <a href="index.html">Главная</a>
           <a href="catalog.html">Каталог</a>
           <a href="order.html">Заявка</a>
@@ -163,10 +165,15 @@
       class="order-dialog"
       id="order-dialog"
       aria-labelledby="order-dialog-title"
+      aria-describedby="order-dialog-description"
     >
       <h2 class="order-dialog__title" id="order-dialog-title">
         Оформление заявки
       </h2>
+
+      <p class="order-dialog__description" id="order-dialog-description">
+        Заполните форму, и менеджер свяжется с вами. Закрыть окно можно кнопкой «Закрыть» или клавишей Esc.
+      </p>
 
       <form
         class="order-form"
@@ -260,6 +267,7 @@
             class="button button--outline"
             type="button"
             id="close-order-dialog"
+            aria-label="Закрыть окно заявки"
           >
             Закрыть
           </button>
@@ -270,7 +278,7 @@
       </form>
     </dialog>
 
-    <p class="success-message" id="success-message" hidden>
+    <p class="success-message" role="status" id="success-message" hidden>
       Форма успешно отправлена!
     </p>
 

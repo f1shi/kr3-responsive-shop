@@ -5,14 +5,15 @@
 :root {
   --color-bg: #ffffff;
   --color-text: #222222;
-  --color-muted: #666666;
+  --color-muted: #4b5563;
   --color-primary: #0057b8;
   --color-primary-dark: #003f86;
   --color-border: #dddddd;
   --color-surface: #f7f7f7;
   --color-surface-accent: #eef5ff;
   --color-danger: #b00020;
-  --color-success: #168a2f;
+  --color-success: #146c2e;
+  --color-warning: #b45309;
   --color-success-bg: #eefaf0;
   --color-white: #ffffff;
 
@@ -299,7 +300,7 @@ a:focus-visible {
 }
 
 .product-card__badge--discount {
-  background-color: #d97706;
+  background-color: var(--color-warning);
 }
 
 .product-card__badge--new {
@@ -310,7 +311,7 @@ a:focus-visible {
   border-color: var(--color-danger);
 }
 .product-card--discount {
-  border-color: #d97706;
+  border-color: var(--color-warning);
 }
 .product-card--new {
   border-color: var(--color-success);
