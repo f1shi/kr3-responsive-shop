@@ -505,3 +505,49 @@ a:focus-visible,
     display: flex;
   }
 }
+
+@media (max-width: 639px) {
+  .specs-table {
+    min-width: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .specs-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .specs-table tbody {
+    display: grid;
+    gap: var(--space-sm, 8px);
+  }
+
+  .specs-table tbody tr {
+    display: grid;
+    gap: var(--space-xs, 4px);
+    padding: var(--space-md, 16px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md, 8px);
+    background-color: var(--color-bg);
+  }
+
+  .specs-table tbody tr:nth-child(even) {
+    background-color: var(--color-surface);
+  }
+
+  .specs-table tbody th,
+  .specs-table tbody td {
+    padding: 0;
+    border: none;
+  }
+
+  .specs-table tbody th {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+}
