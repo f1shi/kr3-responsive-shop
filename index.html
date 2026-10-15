@@ -43,12 +43,27 @@
     <main>
       <!-- HERO -->
       <section class="hero">
-        <h1 class="hero__title">Учебный интернет-магазин</h1>
-        <p class="hero__text">
-          Это стартовая страница учебного frontend-проекта. Здесь вы найдёте
-          популярные товары, преимущества магазина и сможете оставить заявку.
-        </p>
-        <a class="button button--primary" href="#popular">Перейти к товарам</a>
+        <div class="hero__content">
+          <h1 class="hero__title">Учебный интернет-магазин</h1>
+          <p class="hero__text">
+            Это стартовая страница учебного frontend-проекта. Здесь вы найдёте
+            популярные товары, преимущества магазина и сможете оставить заявку.
+          </p>
+          <a class="button button--primary hero__button" href="#popular"
+            >Перейти к товарам</a
+          >
+        </div>
+        <picture class="hero__picture">
+          <source media="(min-width: 1200px)" srcset="images/hero-desktop.jpg" />
+          <source media="(min-width: 768px)" srcset="images/hero-tablet.jpg" />
+          <img
+            src="images/hero-mobile.jpg"
+            alt="Смартфон, ноутбук, наушники и смарт-часы из каталога магазина"
+            width="640"
+            height="360"
+            class="hero__image"
+          />
+        </picture>
       </section>
 
       <!-- ПРЕИМУЩЕСТВА (якорь) -->

@@ -85,3 +85,44 @@ main {
     align-items: center;
   }
 }
+
+.hero {
+  display: grid;
+  gap: var(--space-lg, 24px);
+  align-items: center;
+  padding: clamp(20px, 5vw, 48px);
+}
+
+.hero__content {
+  display: grid;
+  gap: var(--space-md, 16px);
+  justify-items: start;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(28px, 7vw, 56px);
+  line-height: 1.1;
+}
+
+.hero__text {
+  margin: 0;
+}
+
+.hero__picture {
+  display: block;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+  border-radius: var(--radius-lg, 12px);
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+  }
+}
