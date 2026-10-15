@@ -307,3 +307,33 @@ main {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
   }
 }
+
+.table-wrapper {
+  width: 100%;
+  margin-bottom: var(--space-xl, 32px);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.specs-table {
+  width: 100%;
+  min-width: 480px;
+  margin-bottom: 0;
+  border-collapse: collapse;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.reviews {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .reviews {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
