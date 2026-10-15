@@ -17,3 +17,27 @@ video {
 body {
   overflow-x: hidden;
 }
+
+main {
+  padding-inline: 0;
+}
+
+.section,
+.hero,
+.catalog-layout,
+.aside-info,
+.success-message,
+.site-header__inner,
+.site-footer__inner {
+  width: min(100% - 32px, var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(24px, 5vw, 64px);
+}
+
+.site-header__inner,
+.site-footer__inner {
+  padding-inline: 0;
+}
