@@ -407,3 +407,29 @@ main {
   content: " / ";
   color: var(--color-muted);
 }
+
+:focus-visible {
+  outline: 3px solid var(--color-primary, #0057b8);
+  outline-offset: 3px;
+}
+
+a:focus-visible,
+.site-nav__link:focus-visible,
+.button:focus-visible,
+.to-top:focus-visible,
+.order-form__input:focus-visible,
+.order-form__textarea:focus-visible,
+.order-form__select:focus-visible,
+.order-form__checkbox:focus-visible,
+.filters-form__input:focus-visible {
+  outline: 3px solid var(--color-primary, #0057b8);
+  outline-offset: 3px;
+}
+
+.site-footer a:focus-visible {
+  outline-color: #ffffff;
+}
+
+.to-top:focus-visible {
+  outline-color: var(--color-text, #222222);
+}
