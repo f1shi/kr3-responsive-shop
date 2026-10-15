@@ -2,6 +2,20 @@
    МОДАЛЬНОЕ ОКНО + ОБРАБОТКА ФОРМЫ В МОДАЛКЕ (index, catalog, product)
    ========================================================= */
 
+function setFieldError(element, isInvalid) {
+  const errorElement = document.getElementById(`${element.id}-error`);
+
+  if (isInvalid) {
+    element.setAttribute('aria-invalid', 'true');
+  } else {
+    element.removeAttribute('aria-invalid');
+  }
+
+  if (errorElement) {
+    errorElement.hidden = !isInvalid;
+  }
+}
+
 const orderDialog = document.getElementById('order-dialog');
 const orderButtons = document.querySelectorAll('.product-card__button[data-product]');
 const closeDialogButton = document.getElementById('close-order-dialog');
@@ -34,14 +48,14 @@ if (orderForm) {
 
     formElements.forEach((element) => {
       if (element.willValidate) {
-        element.removeAttribute('aria-invalid');
+        setFieldError(element, false);
       }
     });
 
     if (!orderForm.checkValidity()) {
       formElements.forEach((element) => {
         if (element.willValidate && !element.checkValidity()) {
-          element.setAttribute('aria-invalid', 'true');
+          setFieldError(element, true);
         }
       });
       orderForm.reportValidity();
@@ -69,14 +83,14 @@ if (pageOrderForm) {
 
     formElements.forEach((element) => {
       if (element.willValidate) {
-        element.removeAttribute('aria-invalid');
+        setFieldError(element, false);
       }
     });
 
     if (!pageOrderForm.checkValidity()) {
       formElements.forEach((element) => {
         if (element.willValidate && !element.checkValidity()) {
-          element.setAttribute('aria-invalid', 'true');
+          setFieldError(element, true);
         }
       });
       pageOrderForm.reportValidity();
@@ -103,14 +117,14 @@ if (feedbackForm) {
 
     formElements.forEach((element) => {
       if (element.willValidate) {
-        element.removeAttribute('aria-invalid');
+        setFieldError(element, false);
       }
     });
 
     if (!feedbackForm.checkValidity()) {
       formElements.forEach((element) => {
         if (element.willValidate && !element.checkValidity()) {
-          element.setAttribute('aria-invalid', 'true');
+          setFieldError(element, true);
         }
       });
       feedbackForm.reportValidity();

@@ -85,17 +85,24 @@
             novalidate
           >
             <h2 class="order-form__title">Форма обратной связи</h2>
+            <p class="form-note">
+              Поля, отмеченные звёздочкой, обязательны для заполнения.
+            </p>
 
             <div class="order-form__field">
               <label class="order-form__label" for="c-name">Имя *</label>
               <input
                 class="order-form__input"
                 id="c-name"
+                aria-describedby="c-name-error"
                 name="name"
                 type="text"
                 minlength="2"
                 required
               />
+              <p class="order-form__error" id="c-name-error" hidden>
+                Введите имя (минимум 2 символа).
+              </p>
             </div>
 
             <div class="order-form__field">
@@ -103,10 +110,14 @@
               <input
                 class="order-form__input"
                 id="c-email"
+                aria-describedby="c-email-error"
                 name="email"
                 type="email"
                 required
               />
+              <p class="order-form__error" id="c-email-error" hidden>
+                Введите корректный e-mail.
+              </p>
             </div>
 
             <div class="order-form__field order-form__field--wide">
@@ -116,10 +127,14 @@
               <textarea
                 class="order-form__textarea"
                 id="c-message"
+                aria-describedby="c-message-error"
                 name="message"
                 rows="5"
                 required
               ></textarea>
+              <p class="order-form__error" id="c-message-error" hidden>
+                Введите сообщение.
+              </p>
             </div>
 
             <div class="order-form__field order-form__field--checkbox order-form__field--wide">
@@ -127,12 +142,16 @@
                 <input
                   class="order-form__checkbox"
                   id="c-agreement"
+                  aria-describedby="c-agreement-error"
                   name="agreement"
                   type="checkbox"
                   required
                 />
                 Я согласен на обработку персональных данных *
               </label>
+              <p class="order-form__error" id="c-agreement-error" hidden>
+                Необходимо согласие на обработку данных.
+              </p>
             </div>
 
             <div class="order-form__actions">
@@ -143,7 +162,7 @@
           </form>
         </div>
 
-        <p class="success-message" id="success-message-contacts" hidden>
+        <p class="success-message" role="status" id="success-message-contacts" hidden>
           Сообщение успешно отправлено!
         </p>
       </section>
