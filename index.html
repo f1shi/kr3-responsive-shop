@@ -213,10 +213,15 @@
       class="order-dialog"
       id="order-dialog"
       aria-labelledby="order-dialog-title"
+      aria-describedby="order-dialog-description"
     >
       <h2 class="order-dialog__title" id="order-dialog-title">
         Оформление заявки
       </h2>
+
+      <p class="order-dialog__description" id="order-dialog-description">
+        Заполните форму, и менеджер свяжется с вами. Закрыть окно можно кнопкой «Закрыть» или клавишей Esc.
+      </p>
 
       <form
         class="order-form"
@@ -325,6 +330,7 @@
             class="button button--outline"
             type="button"
             id="close-order-dialog"
+            aria-label="Закрыть окно заявки"
           >
             Закрыть
           </button>
