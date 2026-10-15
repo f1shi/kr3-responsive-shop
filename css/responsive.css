@@ -457,3 +457,51 @@ a:focus-visible,
 .specs-table tbody th {
   font-weight: 600;
 }
+
+.site-header__inner {
+  position: relative;
+}
+
+.site-nav__toggle {
+  position: absolute;
+  top: var(--space-md, 16px);
+  right: 0;
+  min-height: 44px;
+  padding: 8px 16px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+}
+
+.site-nav__toggle[hidden] {
+  display: none;
+}
+
+.site-nav--collapsible .site-nav__list {
+  display: none;
+}
+
+.site-nav--collapsible.site-nav--open .site-nav__list {
+  display: flex;
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+@media (min-width: 768px) {
+  .site-nav__toggle,
+  .site-nav__toggle:not([hidden]) {
+    display: none;
+  }
+
+  .site-nav--collapsible .site-nav__list {
+    display: flex;
+  }
+}
