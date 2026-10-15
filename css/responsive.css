@@ -203,3 +203,11 @@ main {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.product-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md, 8px);
+}
