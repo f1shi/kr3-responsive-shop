@@ -337,3 +337,46 @@ main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.order-dialog {
+  width: min(100% - 32px, 560px);
+  max-height: calc(100vh - 32px);
+  padding: var(--space-md, 16px);
+  overflow: auto;
+}
+
+.order-dialog::backdrop {
+  background: rgb(0 0 0 / 0.5);
+}
+
+.to-top {
+  right: 16px;
+  bottom: 16px;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+}
+
+.site-footer__inner {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .order-dialog {
+    padding: var(--space-lg, 24px);
+  }
+
+  .to-top {
+    right: 32px;
+    bottom: 32px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .site-footer__inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
