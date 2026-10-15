@@ -453,3 +453,7 @@ a:focus-visible,
 .order-form__error[hidden] {
   display: none;
 }
+
+.specs-table tbody th {
+  font-weight: 600;
+}
