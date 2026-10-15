@@ -9,6 +9,7 @@
       content="Смартфон Galaxy X: 6.5 AMOLED, 128 ГБ, 8 ГБ ОЗУ. Характеристики, цена, заказ."
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -51,7 +52,16 @@
         </nav>
 
         <div class="product-detail">
-          <div class="product-detail__image" aria-hidden="true">📱</div>
+          <picture class="product-detail__picture">
+            <source srcset="images/galaxy-x-640.webp" type="image/webp" />
+            <img
+              class="product-detail__image"
+              src="images/galaxy-x-640.jpg"
+              alt="Смартфон Galaxy X"
+              width="640"
+              height="480"
+            />
+          </picture>
           <div class="product-detail__info">
             <h1 class="product-detail__title">Смартфон Galaxy X</h1>
             <p class="product-detail__price">54 990 руб.</p>
@@ -72,47 +82,49 @@
 
         <!-- ТАБЛИЦА ХАРАКТЕРИСТИК -->
         <h2>Характеристики</h2>
-        <table class="specs-table">
-          <caption>
-            Технические характеристики Galaxy X
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col">Параметр</th>
-              <th scope="col">Значение</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Дисплей</td>
-              <td>6.5" AMOLED, 2400×1080</td>
-            </tr>
-            <tr>
-              <td>Процессор</td>
-              <td>Octa-core 2.8 ГГц</td>
-            </tr>
-            <tr>
-              <td>Оперативная память</td>
-              <td>8 ГБ</td>
-            </tr>
-            <tr>
-              <td>Встроенная память</td>
-              <td>128 ГБ</td>
-            </tr>
-            <tr>
-              <td>Камера</td>
-              <td>50 МП + 12 МП + 8 МП</td>
-            </tr>
-            <tr>
-              <td>Аккумулятор</td>
-              <td>5000 мА·ч</td>
-            </tr>
-            <tr>
-              <td>ОС</td>
-              <td>Android 14</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrapper">
+          <table class="specs-table">
+            <caption>
+              Технические характеристики Galaxy X
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Параметр</th>
+                <th scope="col">Значение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Дисплей</td>
+                <td>6.5" AMOLED, 2400×1080</td>
+              </tr>
+              <tr>
+                <td>Процессор</td>
+                <td>Octa-core 2.8 ГГц</td>
+              </tr>
+              <tr>
+                <td>Оперативная память</td>
+                <td>8 ГБ</td>
+              </tr>
+              <tr>
+                <td>Встроенная память</td>
+                <td>128 ГБ</td>
+              </tr>
+              <tr>
+                <td>Камера</td>
+                <td>50 МП + 12 МП + 8 МП</td>
+              </tr>
+              <tr>
+                <td>Аккумулятор</td>
+                <td>5000 мА·ч</td>
+              </tr>
+              <tr>
+                <td>ОС</td>
+                <td>Android 14</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <!-- ОТЗЫВЫ (самостоятельная доработка) -->
         <h2>Отзывы</h2>
@@ -218,7 +230,7 @@
           </select>
         </div>
 
-        <div class="order-form__field">
+        <div class="order-form__field order-form__field--wide">
           <label class="order-form__label" for="order-comment"
             >Комментарий</label
           >
@@ -230,7 +242,7 @@
           ></textarea>
         </div>
 
-        <div class="order-form__field order-form__field--checkbox">
+        <div class="order-form__field order-form__field--checkbox order-form__field--wide">
           <label class="order-form__label">
             <input
               class="order-form__checkbox"

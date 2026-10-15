@@ -9,6 +9,7 @@
       content="Каталог товаров ShopProject: смартфоны, ноутбуки, наушники и аксессуары."
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -124,6 +125,20 @@
 
             <div class="products-grid">
               <article class="product-card">
+                <img
+                  class="product-card__image"
+                  src="images/galaxy-x-640.jpg"
+                  srcset="
+                    images/galaxy-x-480.jpg 480w,
+                    images/galaxy-x-640.jpg 640w,
+                    images/galaxy-x-960.jpg 960w
+                  "
+                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                  alt="Смартфон Galaxy X"
+                  width="640"
+                  height="480"
+                  loading="lazy"
+                />
                 <h3 class="product-card__title">Смартфон Galaxy X</h3>
                 <p class="product-card__description">
                   6.5" AMOLED, 128 ГБ, 8 ГБ ОЗУ.
@@ -140,6 +155,20 @@
                 <span class="product-card__badge product-card__badge--discount"
                   >Скидка</span
                 >
+                <img
+                  class="product-card__image"
+                  src="images/probook-15-640.jpg"
+                  srcset="
+                    images/probook-15-480.jpg 480w,
+                    images/probook-15-640.jpg 640w,
+                    images/probook-15-960.jpg 960w
+                  "
+                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                  alt="Ноутбук ProBook 15"
+                  width="640"
+                  height="480"
+                  loading="lazy"
+                />
                 <h3 class="product-card__title">Ноутбук ProBook 15</h3>
                 <p class="product-card__description">
                   Intel Core i7, 16 ГБ, SSD 512 ГБ.
@@ -156,6 +185,20 @@
                 <span class="product-card__badge product-card__badge--new"
                   >Новинка</span
                 >
+                <img
+                  class="product-card__image"
+                  src="images/airsound-640.jpg"
+                  srcset="
+                    images/airsound-480.jpg 480w,
+                    images/airsound-640.jpg 640w,
+                    images/airsound-960.jpg 960w
+                  "
+                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                  alt="Наушники AirSound"
+                  width="640"
+                  height="480"
+                  loading="lazy"
+                />
                 <h3 class="product-card__title">Наушники AirSound</h3>
                 <p class="product-card__description">
                   Беспроводные, активное шумоподавление.
@@ -169,6 +212,20 @@
               </article>
 
               <article class="product-card">
+                <img
+                  class="product-card__image"
+                  src="images/fitband-640.jpg"
+                  srcset="
+                    images/fitband-480.jpg 480w,
+                    images/fitband-640.jpg 640w,
+                    images/fitband-960.jpg 960w
+                  "
+                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                  alt="Смарт-часы FitBand"
+                  width="640"
+                  height="480"
+                  loading="lazy"
+                />
                 <h3 class="product-card__title">Смарт-часы FitBand</h3>
                 <p class="product-card__description">
                   AMOLED, GPS, автономность до 7 дней.
@@ -185,6 +242,20 @@
                 <span class="product-card__badge product-card__badge--hit"
                   >Хит</span
                 >
+                <img
+                  class="product-card__image"
+                  src="images/ultraview-27-640.jpg"
+                  srcset="
+                    images/ultraview-27-480.jpg 480w,
+                    images/ultraview-27-640.jpg 640w,
+                    images/ultraview-27-960.jpg 960w
+                  "
+                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                  alt="Монитор UltraView 27&quot;"
+                  width="640"
+                  height="480"
+                  loading="lazy"
+                />
                 <h3 class="product-card__title">Монитор UltraView 27"</h3>
                 <p class="product-card__description">4K, IPS, 144 Гц.</p>
                 <p class="product-card__price">Цена: 32 990 руб.</p>
@@ -196,6 +267,20 @@
               </article>
 
               <article class="product-card">
+                <img
+                  class="product-card__image"
+                  src="images/mechpro-640.jpg"
+                  srcset="
+                    images/mechpro-480.jpg 480w,
+                    images/mechpro-640.jpg 640w,
+                    images/mechpro-960.jpg 960w
+                  "
+                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                  alt="Клавиатура MechPro"
+                  width="640"
+                  height="480"
+                  loading="lazy"
+                />
                 <h3 class="product-card__title">Клавиатура MechPro</h3>
                 <p class="product-card__description">
                   Механическая, RGB-подсветка.
@@ -300,7 +385,7 @@
           </select>
         </div>
 
-        <div class="order-form__field">
+        <div class="order-form__field order-form__field--wide">
           <label class="order-form__label" for="order-comment"
             >Комментарий</label
           >
@@ -312,7 +397,7 @@
           ></textarea>
         </div>
 
-        <div class="order-form__field order-form__field--checkbox">
+        <div class="order-form__field order-form__field--checkbox order-form__field--wide">
           <label class="order-form__label">
             <input
               class="order-form__checkbox"

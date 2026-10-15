@@ -9,6 +9,7 @@
       content="ShopProject — учебный интернет-магазин. Смартфоны, ноутбуки, аксессуары по выгодным ценам."
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -42,12 +43,27 @@
     <main>
       <!-- HERO -->
       <section class="hero">
-        <h1 class="hero__title">Учебный интернет-магазин</h1>
-        <p class="hero__text">
-          Это стартовая страница учебного frontend-проекта. Здесь вы найдёте
-          популярные товары, преимущества магазина и сможете оставить заявку.
-        </p>
-        <a class="button button--primary" href="#popular">Перейти к товарам</a>
+        <div class="hero__content">
+          <h1 class="hero__title">Учебный интернет-магазин</h1>
+          <p class="hero__text">
+            Это стартовая страница учебного frontend-проекта. Здесь вы найдёте
+            популярные товары, преимущества магазина и сможете оставить заявку.
+          </p>
+          <a class="button button--primary hero__button" href="#popular"
+            >Перейти к товарам</a
+          >
+        </div>
+        <picture class="hero__picture">
+          <source media="(min-width: 1200px)" srcset="images/hero-desktop.jpg" />
+          <source media="(min-width: 768px)" srcset="images/hero-tablet.jpg" />
+          <img
+            src="images/hero-mobile.jpg"
+            alt="Смартфон, ноутбук, наушники и смарт-часы из каталога магазина"
+            width="640"
+            height="360"
+            class="hero__image"
+          />
+        </picture>
       </section>
 
       <!-- ПРЕИМУЩЕСТВА (якорь) -->
@@ -70,6 +86,20 @@
             <span class="product-card__badge product-card__badge--hit"
               >Хит</span
             >
+            <img
+              class="product-card__image"
+              src="images/galaxy-x-640.jpg"
+              srcset="
+                images/galaxy-x-480.jpg 480w,
+                images/galaxy-x-640.jpg 640w,
+                images/galaxy-x-960.jpg 960w
+              "
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+              alt="Смартфон Galaxy X"
+              width="640"
+              height="480"
+              loading="lazy"
+            />
             <h3 class="product-card__title">Смартфон Galaxy X</h3>
             <p class="product-card__description">
               Краткое описание учебного товара.
@@ -88,6 +118,20 @@
             <span class="product-card__badge product-card__badge--discount"
               >Скидка</span
             >
+            <img
+              class="product-card__image"
+              src="images/probook-15-640.jpg"
+              srcset="
+                images/probook-15-480.jpg 480w,
+                images/probook-15-640.jpg 640w,
+                images/probook-15-960.jpg 960w
+              "
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+              alt="Ноутбук ProBook 15"
+              width="640"
+              height="480"
+              loading="lazy"
+            />
             <h3 class="product-card__title">Ноутбук ProBook 15</h3>
             <p class="product-card__description">
               Краткое описание учебного товара.
@@ -106,6 +150,20 @@
             <span class="product-card__badge product-card__badge--new"
               >Новинка</span
             >
+            <img
+              class="product-card__image"
+              src="images/airsound-640.jpg"
+              srcset="
+                images/airsound-480.jpg 480w,
+                images/airsound-640.jpg 640w,
+                images/airsound-960.jpg 960w
+              "
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+              alt="Наушники AirSound"
+              width="640"
+              height="480"
+              loading="lazy"
+            />
             <h3 class="product-card__title">Наушники AirSound</h3>
             <p class="product-card__description">
               Краткое описание учебного товара.
@@ -234,7 +292,7 @@
           </select>
         </div>
 
-        <div class="order-form__field">
+        <div class="order-form__field order-form__field--wide">
           <label class="order-form__label" for="order-comment"
             >Комментарий</label
           >
@@ -247,7 +305,7 @@
           ></textarea>
         </div>
 
-        <div class="order-form__field order-form__field--checkbox">
+        <div class="order-form__field order-form__field--checkbox order-form__field--wide">
           <label class="order-form__label">
             <input
               class="order-form__checkbox"
