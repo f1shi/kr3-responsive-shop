@@ -402,3 +402,8 @@ main {
 .main:focus {
   outline: none;
 }
+
+.breadcrumbs__link + .breadcrumbs__link::before {
+  content: " / ";
+  color: var(--color-muted);
+}
